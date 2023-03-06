@@ -1,0 +1,49 @@
+# Package Overview
+package_name: classification_model
+
+# Data Files
+raw_data_file: raw.csv
+training_data_file: train.csv
+test_data_file: test.csv
+
+unused_fields:
+  - name
+  - ticket
+  - boat
+  - body
+  - home.dest
+
+features:
+  - pclass
+  - sex
+  - age
+  - sibsp
+  - parch
+  - fare
+  - cabin
+  - embarked
+  - title # generated from name
+
+# The variable we are attempting to predict
+target: survived
+
+test_size: 0.1
+
+random_state: 0
+
+categorical_vars:
+  - sex
+  - cabin
+  - embarked
+  - title
+
+numerical_vars:
+  - age
+  - fare
+
+cabin_vars:
+  - cabin
+
+pipeline_save_file: titanic_classification_model_output_v
+
+
